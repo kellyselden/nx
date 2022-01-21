@@ -17,7 +17,11 @@ export default async function (
 
   const args = [];
   Object.keys(options).forEach((r) => {
-    args.push(`--${r}=${options[r]}`);
+    if (r === '_') {
+      args.push(...options[r]);
+    } else {
+      args.push(`--${r}=${options[r]}`);
+    }
   });
 
   try {

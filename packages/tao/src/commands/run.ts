@@ -95,7 +95,7 @@ function parseRunOpts(
   }
   const res = { project, target, configuration, help, runOptions };
   delete runOptions['help'];
-  delete runOptions['_'];
+  runOptions._.shift();
   delete runOptions['c'];
   delete runOptions['configuration'];
   delete runOptions['prod'];

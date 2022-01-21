@@ -88,8 +88,6 @@ export function splitArgsIntoNxArgsAndOverrides(
   // This removes the overrides from the nxArgs._
   args._ = overrides._;
 
-  delete overrides._;
-
   Object.entries(args).forEach(([key, value]) => {
     const dasherized = names(key).fileName;
     if (nxSpecific.includes(dasherized) || dasherized.startsWith('nx-')) {
